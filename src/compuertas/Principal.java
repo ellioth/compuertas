@@ -4,8 +4,14 @@
  * and open the template in the editor.
  */
 package compuertas;
+import java.awt.Container;
+import java.awt.MouseInfo;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import logica.*;
 /**
@@ -15,6 +21,10 @@ import logica.*;
 public class Principal extends javax.swing.JFrame {
     private ConecComp Connect;
     private cuadroVal val;
+    private CargarImage img;
+    private Sprite cuadro;
+    private PosImagen posImg;
+    private BufferedImage imagen;
     private int and;
     private int or;
     private int not;
@@ -129,7 +139,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(BtnAnd);
-        BtnAnd.setBounds(10, 50, 70, 29);
+        BtnAnd.setBounds(10, 50, 87, 29);
 
         BtnOr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/or.jpg"))); // NOI18N
         BtnOr.setBorderPainted(false);
@@ -211,21 +221,21 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Kokonor", 1, 14)); // NOI18N
         jLabel2.setText("compuertas");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(10, 10, 80, 24);
+        jLabel2.setBounds(10, 10, 80, 19);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 100, 770);
+        jPanel1.setBounds(0, 0, 100, 470);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Kokonor", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("DIAGRAMADOR DE COMPUERTAS LOGICAS ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(160, 10, 407, 31);
+        jLabel1.setBounds(160, 10, 382, 24);
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
         getContentPane().add(fondo);
-        fondo.setBounds(100, 0, 1170, 760);
+        fondo.setBounds(100, 0, 550, 470);
 
         opciones.setText("Opciones");
 
@@ -289,72 +299,46 @@ public class Principal extends javax.swing.JFrame {
         listComp.insertHead(ands);
         and++;
         val.setTotalL("and"+ Integer.toString(and));
-        ands= new JLabel(new javax.swing.ImageIcon(getClass().getResource("/imagenes/and.jpg")));
+        ands= new JLabel(new javax.swing.ImageIcon(getClass().getResource("/imagenes/or.png")));
         getContentPane().add(ands);
         fondo.add(ands);
-        ands.setBounds(200, 200, 54, 47);
+        ands.setBounds(200, 200, 100, 100);
     }//GEN-LAST:event_BtnAndActionPerformed
 
     private void BtnOrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnOrActionPerformed
         // TODO add your handling code here:
-        listComp.insertHead(ands);
         or++;
         val.setTotalL("or"+ Integer.toString(or));
-        ands= new JLabel(new javax.swing.ImageIcon(getClass().getResource("/imagenes/or.jpg")));
-        getContentPane().add(ands);
-        fondo.add(ands);
-        ands.setBounds(200, 200, 54, 47);
     }//GEN-LAST:event_BtnOrActionPerformed
 
     private void BtnNotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNotActionPerformed
         // TODO add your handling code here:
-        listComp.insertHead(ands);
         not++;
         val.setTotalL("not"+ Integer.toString(not));
-        ands= new JLabel(new javax.swing.ImageIcon(getClass().getResource("/imagenes/not.jpg")));
-        getContentPane().add(ands);
-        fondo.add(ands);
-        ands.setBounds(200, 200, 54, 47);
     }//GEN-LAST:event_BtnNotActionPerformed
 
     private void BtnNandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNandActionPerformed
         // TODO add your handling code here:
-        listComp.insertHead(ands);
         nand++;
         val.setTotalL("nand"+ Integer.toString(nand));
-        ands= new JLabel(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nand.jpg")));
-        getContentPane().add(ands);
-        fondo.add(ands);
-        ands.setBounds(200, 200, 54, 47);
     }//GEN-LAST:event_BtnNandActionPerformed
 
     private void BtnNorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNorActionPerformed
         // TODO add your handling code here:
-        listComp.insertHead(ands);
         nor++;
         val.setTotalL("nor"+ Integer.toString(nor));
-        ands= new JLabel(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nor.jpg")));
-        getContentPane().add(ands);
-        fondo.add(ands);
-        ands.setBounds(200, 200, 54, 47);
     }//GEN-LAST:event_BtnNorActionPerformed
 
     private void BtnXorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnXorActionPerformed
         // TODO add your handling code here:
-        listComp.insertHead(ands);
         xor++;
         val.setTotalL("xor"+ Integer.toString(xor));
     }//GEN-LAST:event_BtnXorActionPerformed
 
     private void BtnXnorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnXnorActionPerformed
         // TODO add your handling code here:
-        listComp.insertHead(ands);
         xnor++;
         val.setTotalL("xnor"+ Integer.toString(xnor));
-        ands= new JLabel(new javax.swing.ImageIcon(getClass().getResource("/imagenes/xnor.jpg")));
-        getContentPane().add(ands);
-        fondo.add(ands);
-        ands.setBounds(200, 200, 54, 47);
     }//GEN-LAST:event_BtnXnorActionPerformed
 
     private void entradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradasActionPerformed
@@ -422,7 +406,7 @@ public class Principal extends javax.swing.JFrame {
         Y=evt.getY()-53;
         if(press== true && intersecs == true && enter == true){
             System.out.println("saprissa");
-            ands.setBounds(X,Y, 54, 47);
+            ands.setBounds(X-100,Y-100, 200, 200);
         } 
     }//GEN-LAST:event_formMouseMoved
 
