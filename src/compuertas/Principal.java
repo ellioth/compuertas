@@ -297,50 +297,73 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_outActionPerformed
 
     private void BtnAndActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAndActionPerformed
-        // TODO add your handling code here:
         listComp.insertHead(ands);
         and++;
         val.setTotalL("and"+ Integer.toString(and));
-        ands= new JLabel(new javax.swing.ImageIcon(getClass().getResource("/imagenes/or.png")));
+        ands= new JLabel(new javax.swing.ImageIcon(getClass().getResource("/imagenes/and.png")));
         getContentPane().add(ands);
         fondo.add(ands);
-        ands.setBounds(200, 200, 100, 100);
+        ands.setBounds(200, 200, 95, 73);
     }//GEN-LAST:event_BtnAndActionPerformed
 
     private void BtnOrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnOrActionPerformed
-        // TODO add your handling code here:
+        listComp.insertHead(ands);
         or++;
         val.setTotalL("or"+ Integer.toString(or));
+        ands= new JLabel(new javax.swing.ImageIcon(getClass().getResource("/imagenes/or.png")));
+        getContentPane().add(ands);
+        fondo.add(ands);
+        ands.setBounds(200, 200, 95, 73);
     }//GEN-LAST:event_BtnOrActionPerformed
 
     private void BtnNotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNotActionPerformed
-        // TODO add your handling code here:
+        listComp.insertHead(ands);
         not++;
         val.setTotalL("not"+ Integer.toString(not));
+        ands= new JLabel(new javax.swing.ImageIcon(getClass().getResource("/imagenes/not.png")));
+        getContentPane().add(ands);
+        fondo.add(ands);
+        ands.setBounds(200, 200, 95, 73);
     }//GEN-LAST:event_BtnNotActionPerformed
 
     private void BtnNandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNandActionPerformed
-        // TODO add your handling code here:
+        listComp.insertHead(ands);
         nand++;
         val.setTotalL("nand"+ Integer.toString(nand));
+        ands= new JLabel(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nand.png")));
+        getContentPane().add(ands);
+        fondo.add(ands);
+        ands.setBounds(200, 200, 95, 73);
     }//GEN-LAST:event_BtnNandActionPerformed
 
     private void BtnNorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNorActionPerformed
-        // TODO add your handling code here:
+        listComp.insertHead(ands);
         nor++;
         val.setTotalL("nor"+ Integer.toString(nor));
+        ands= new JLabel(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nor.png")));
+        getContentPane().add(ands);
+        fondo.add(ands);
+        ands.setBounds(200, 200, 95, 73);
     }//GEN-LAST:event_BtnNorActionPerformed
 
     private void BtnXorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnXorActionPerformed
-        // TODO add your handling code here:
+        listComp.insertHead(ands);
         xor++;
         val.setTotalL("xor"+ Integer.toString(xor));
+        ands= new JLabel(new javax.swing.ImageIcon(getClass().getResource("/imagenes/xor.png")));
+        getContentPane().add(ands);
+        fondo.add(ands);
+        ands.setBounds(200, 200, 95, 73);
     }//GEN-LAST:event_BtnXorActionPerformed
 
     private void BtnXnorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnXnorActionPerformed
-        // TODO add your handling code here:
+        listComp.insertHead(ands);
         xnor++;
         val.setTotalL("xnor"+ Integer.toString(xnor));
+        ands= new JLabel(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Xnor.png")));
+        getContentPane().add(ands);
+        fondo.add(ands);
+        ands.setBounds(200, 200, 95, 73);
     }//GEN-LAST:event_BtnXnorActionPerformed
 
     private void entradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradasActionPerformed
@@ -373,16 +396,15 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_formMouseDragged
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
-        // TODO add your handling code here:
         if ((enter == false)){
             System.out.println("entra");
             Rectangle comp = new Rectangle(X,Y,5,5);
-            System.out.println(comp);
             Node tmp= listComp.getHead();
             while (tmp!= null){
                 Rectangle temp= new Rectangle(((JLabel) tmp.get_data()).getLocation().x,((JLabel) tmp.get_data()).getLocation().y,((JLabel) tmp.get_data()).getSize().width, ((JLabel) tmp.get_data()).getSize().height);
-                System.out.println("es temp "+ temp);
+                System.out.println(temp);
                 if(temp.intersects(comp)){
+                    System.out.println("ES TEMP "+ temp);
                     enter = true;
                     press = true;
                         intersecs = true;
@@ -402,13 +424,12 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_formMouseClicked
 
     private void formMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseMoved
-        // TODO add your handling code here:
-        System.out.println("X: "+(evt.getX()-108)+"Y: "+(evt.getY()-53));
         X=evt.getX()-108;
         Y=evt.getY()-53;
+        System.out.println("X:" +X+ " Y: "+Y);
         if(press== true && intersecs == true && enter == true){
             System.out.println("saprissa");
-            ands.setBounds(X-100,Y-100, 200, 200);
+            ands.setBounds(X-100,Y-100, 90,73);
         } 
     }//GEN-LAST:event_formMouseMoved
 
