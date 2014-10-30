@@ -40,6 +40,7 @@ public class Principal extends javax.swing.JFrame {
     private boolean press = false;
     private boolean intersecs = false;
     private boolean enter = false;
+    ObtenerEntradas entrarVal;
     
     /**
      * Creates new form ventan1
@@ -59,6 +60,7 @@ public class Principal extends javax.swing.JFrame {
         ands= new JLabel();
         Connect = new ConecComp();
         val= new cuadroVal();
+        entrarVal = new ObtenerEntradas();
         initComponents();
         
     }
@@ -343,7 +345,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void entradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradasActionPerformed
         // TODO add your handling code here:
-        val.setVisible(true);
+       entrarVal.setVisible(true);
     }//GEN-LAST:event_entradasActionPerformed
 
     private void connectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connectActionPerformed
