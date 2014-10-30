@@ -85,6 +85,7 @@ public class Principal extends javax.swing.JFrame {
         BtnXnor = new javax.swing.JButton();
         BtnRaya = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -103,12 +104,7 @@ public class Principal extends javax.swing.JFrame {
         setTitle("Diagramador de compuertas\n");
         setBackground(new java.awt.Color(0, 0, 0));
         setBounds(new java.awt.Rectangle(100, 22, 680, 520));
-        setMinimumSize(new java.awt.Dimension(680, 520));
-        addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                formMouseClicked(evt);
-            }
-        });
+        setMinimumSize(new java.awt.Dimension(1241, 866));
         addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 formMouseDragged(evt);
@@ -117,22 +113,27 @@ public class Principal extends javax.swing.JFrame {
                 formMouseMoved(evt);
             }
         });
-        getContentPane().setLayout(null);
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(null);
-
-        BtnAnd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/and.jpg"))); // NOI18N
-        BtnAnd.setBorderPainted(false);
-        BtnAnd.setContentAreaFilled(false);
-        BtnAnd.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                BtnAndMouseDragged(evt);
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
             }
         });
+        getContentPane().setLayout(null);
+
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setLayout(null);
+
+        BtnAnd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/and.png"))); // NOI18N
+        BtnAnd.setBorderPainted(false);
+        BtnAnd.setContentAreaFilled(false);
         BtnAnd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 BtnAndMousePressed(evt);
+            }
+        });
+        BtnAnd.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                BtnAndMouseDragged(evt);
             }
         });
         BtnAnd.addActionListener(new java.awt.event.ActionListener() {
@@ -141,9 +142,9 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(BtnAnd);
-        BtnAnd.setBounds(10, 50, 87, 29);
+        BtnAnd.setBounds(20, 70, 111, 80);
 
-        BtnOr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/or.jpg"))); // NOI18N
+        BtnOr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/or.png"))); // NOI18N
         BtnOr.setBorderPainted(false);
         BtnOr.setContentAreaFilled(false);
         BtnOr.addActionListener(new java.awt.event.ActionListener() {
@@ -152,9 +153,9 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(BtnOr);
-        BtnOr.setBounds(10, 90, 70, 29);
+        BtnOr.setBounds(30, 150, 110, 120);
 
-        BtnNot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/not.jpg"))); // NOI18N
+        BtnNot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/not.png"))); // NOI18N
         BtnNot.setBorderPainted(false);
         BtnNot.setContentAreaFilled(false);
         BtnNot.addActionListener(new java.awt.event.ActionListener() {
@@ -163,9 +164,9 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(BtnNot);
-        BtnNot.setBounds(10, 130, 70, 29);
+        BtnNot.setBounds(20, 270, 90, 90);
 
-        BtnNand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nand.jpg"))); // NOI18N
+        BtnNand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nand.png"))); // NOI18N
         BtnNand.setBorderPainted(false);
         BtnNand.setContentAreaFilled(false);
         BtnNand.addActionListener(new java.awt.event.ActionListener() {
@@ -174,9 +175,9 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(BtnNand);
-        BtnNand.setBounds(10, 180, 70, 29);
+        BtnNand.setBounds(20, 360, 90, 80);
 
-        BtnNor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nor.jpg"))); // NOI18N
+        BtnNor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/nor.png"))); // NOI18N
         BtnNor.setBorderPainted(false);
         BtnNor.setContentAreaFilled(false);
         BtnNor.addActionListener(new java.awt.event.ActionListener() {
@@ -185,9 +186,9 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(BtnNor);
-        BtnNor.setBounds(10, 230, 70, 29);
+        BtnNor.setBounds(30, 460, 90, 90);
 
-        BtnXor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/xor.jpg"))); // NOI18N
+        BtnXor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/xor.png"))); // NOI18N
         BtnXor.setBorderPainted(false);
         BtnXor.setContentAreaFilled(false);
         BtnXor.addActionListener(new java.awt.event.ActionListener() {
@@ -196,9 +197,9 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(BtnXor);
-        BtnXor.setBounds(10, 270, 70, 40);
+        BtnXor.setBounds(20, 550, 111, 100);
 
-        BtnXnor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/xnor.jpg"))); // NOI18N
+        BtnXnor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Xnor.png"))); // NOI18N
         BtnXnor.setBorderPainted(false);
         BtnXnor.setContentAreaFilled(false);
         BtnXnor.addActionListener(new java.awt.event.ActionListener() {
@@ -207,7 +208,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(BtnXnor);
-        BtnXnor.setBounds(10, 320, 70, 29);
+        BtnXnor.setBounds(20, 650, 130, 100);
 
         BtnRaya.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/raya.jpg"))); // NOI18N
         BtnRaya.setBorderPainted(false);
@@ -218,26 +219,28 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(BtnRaya);
-        BtnRaya.setBounds(0, 370, 97, 29);
+        BtnRaya.setBounds(30, 780, 97, 29);
 
-        jLabel2.setFont(new java.awt.Font("Kokonor", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Kokonor", 1, 18)); // NOI18N
         jLabel2.setText("compuertas");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(10, 10, 80, 19);
+        jLabel2.setBounds(20, 30, 140, 24);
+        jPanel1.add(jDesktopPane1);
+        jDesktopPane1.setBounds(50, 780, 100, 100);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 100, 470);
+        jPanel1.setBounds(0, 0, 210, 980);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Kokonor", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("DIAGRAMADOR DE COMPUERTAS LOGICAS ");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(160, 10, 382, 24);
+        jLabel1.setBounds(450, 20, 390, 40);
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
         getContentPane().add(fondo);
-        fondo.setBounds(100, 0, 550, 470);
+        fondo.setBounds(210, 0, 1200, 1080);
 
         opciones.setText("Opciones");
 
@@ -482,6 +485,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem connect;
     private javax.swing.JMenuItem entradas;
     private javax.swing.JLabel fondo;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu2;
