@@ -9,6 +9,7 @@ import java.awt.MouseInfo;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -43,7 +44,7 @@ public class Principal extends javax.swing.JFrame {
     ObtenerEntradas entrarVal;
     
     /**
-     * Creates new form ventan1
+     * Creates new form ventana1
      */
     public Principal() {
         and=0;
@@ -64,7 +65,13 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         
     }
-    
+    public String Rayarnd(){
+        String [] arregloRnd= {"/imagenes/raya1.png","/imagenes/raya2.png","/imagenes/raya3.png","/imagenes/raya4.png","/imagenes/raya5.png","/imagenes/raya6.png" };
+        Random rnd = new Random();
+        int i=rnd.nextInt(5);
+        String tmp= arregloRnd[i];
+        return tmp;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -388,6 +395,10 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         raya++;
         val.setTotalL("raya"+ Integer.toString(raya));
+        ands= new JLabel(new javax.swing.ImageIcon(getClass().getResource(Rayarnd())));
+        getContentPane().add(ands);
+        fondo.add(ands);
+        ands.setBounds(200, 200, 95, 73);
     }//GEN-LAST:event_BtnRayaActionPerformed
 
     private void BtnAndMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnAndMouseDragged
